@@ -1,0 +1,25 @@
+{
+   "background": {
+      "scripts": [ "/polyfill.js", "/background.js" ]
+   },
+   "browser_action": {
+      "browser_style": false,
+      "default_icon": "/icons/icon.png",
+      "default_popup": "/popup.html"
+   },
+   "description": "Monitors source files on a page. Reloads the page or just the changed stylesheet when source files are updated.",
+   "homepage_url": "https://github.com/blaise-io/live-reload#readme",
+   "icons": {
+      "128": "/icons/icon.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyxei18Q+JayxmfuEM2Rmc1fpCPDEJ3EbLXxVOFfYqCFwdAkpkLkWVdipgPhTRI20X8hDODYbLUgfF5tw8qrMF8M4qSsFzQGYYdPqC4Q8X8bRO0eVWRXQb89aFrU4Cer2ul/xyVwp6edWCGNz3dtbNrF8aMFDMgijpLLzoGItqlhXnEvoUnJGFL8yoD7vZlfB+DCheCj7QkaUqwHiAUn2j7Zgxz1E4xB0+cVJgqDDh9OVylGihwHP7KXAAAXA15Rs1JL73BUz3QK7vsL+xQXaJI2REqXCpmKdw0VZCmbEmyBw9IZ5cdGu9ojMvmMD0WaZ3xy4APU9xzCcLp2vuAXRgQIDAQAB",
+   "manifest_version": 2,
+   "name": "Live Reload",
+   "options_ui": {
+      "page": "/options.html"
+   },
+   "permissions": [ "\u003Call_urls>", "storage", "tabs", "webNavigation", "webRequest" ],
+   "update_url": "https://edge.microsoft.com/extensionwebstorebase/v1/crx",
+   "version": "1.8.2",
+   "web_accessible_resources": [ "/polyfill.js" ]
+}

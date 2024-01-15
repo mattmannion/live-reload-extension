@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Loading…</title>
+<link href="form.css" rel="stylesheet"></head>
+<body>
+    <form>
+        <h2 class="form-row update">Loading…</h2>
+        <h2 class="form-row create hidden">Create a new reload rule</h2>
+        <input type="hidden" name="id">
+        <input type="hidden" name="created">
+        <input type="hidden" name="modified">
+        <div class="form-row browser-style">
+            <label for="title">Title</label>
+            <input autofocus
+                   name="title"
+                   id="title"
+                   required
+                   type="text"
+                   maxlength="64"
+                   placeholder="This title will be visible in the overview">
+        </div>
+        <div class="form-row help">
+            When a tab URL matches the <strong>Host URL</strong> field,
+            this addon will start monitoring all scripts, stylesheets and frames
+            on this page. This field supports a match pattern.
+            <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns" target="_blank">
+                How do I write a match pattern?
+            </a>
+        </div>
+        <div class="form-row browser-style">
+            <label for="host">Host URL</label>
+            <input required
+                   name="host"
+                   id="host"
+                   class="code browser-style"
+                   type="text"
+                   placeholder="https://example.org/*">
+        </div>
+        <div class="form-row help">
+            <strong>Specify the URLs for the scripts, stylesheets and/or frames you want to monitor on the host.</strong>
+            Enter absolute URLs including scheme and host name.
+            Separate multiple URLs with a line break.
+        </div>
+        <div class="form-row browser-style">
+            <label for="sources">Source file URLs</label>
+            <textarea required
+                      name="sources"
+                      id="sources"
+                      placeholder="https://example.org/*.js"
+                      class="code browser-style"></textarea>
+        </div>
+        <div class="form-row help">
+            <strong>Optional.</strong> Source file URLs matching the URLs below will not be monitored.
+        </div>
+        <div class="form-row browser-style">
+            <label for="sources">Ignore source file URLs</label>
+            <textarea name="ignores"
+                      id="ignores"
+                      placeholder="https://example.org/vendor/*.js"
+                      class="code browser-style"></textarea>
+        </div>
+        <div class="form-row browser-style">
+            <label>
+            Monitor source URLs every <input required
+                   name="interval"
+                   id="interval"
+                   type="number"
+                   min="0.5"
+                   step="0.5"
+                   value="2"> seconds
+            </label>
+        </div>
+        <div class="form-row browser-style">
+            <label>
+                <input type="checkbox" name="inlinecss" value="true">
+                Reload stylesheets without reloading the host page
+            </label>
+            <label>
+                <input type="checkbox" name="inlineframes" value="true">
+                Reload frames without reloading the host page
+            </label>
+        </div>
+        <div class="form-row form-submit browser-style">
+            <button type="submit" class="browser-style create">Create reload rule</button>
+            <button type="submit" class="browser-style update hidden">Save reload rule</button>
+        </div>
+    </form>
+<script type="text/javascript" src="polyfill.js"></script><script type="text/javascript" src="form.js"></script></body>
+</html>

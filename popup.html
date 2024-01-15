@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <title>Live Reload – Rules</title>
+    <meta charset="utf-8">
+<link href="popup.css" rel="stylesheet"></head>
+<body>
+<template id="reload-rule">
+    <div class="split">
+        <a class="panel-list-item rule"
+             href="/form.html"
+             target="live-reload">
+            <img src="/icons/script.svg" class="icon">
+            <div class="text"></div>
+        </a>
+        <div class="panel-list-item options option-delete">
+            <img src="/icons/delete.svg">
+        </div>
+    </div>
+    <div class="split hidden">
+        <div class="panel-list-item disabled confirm-delete">
+            <span class="icon placeholder"></span>
+            <div class="text">Delete this reload rule?</div>
+        </div>
+        <div class="panel-list-item options option-delete-confirm" data-rule-id>
+            <div class="text text-delete">Delete</div>
+        </div>
+        <div class="panel-list-item options option-delete-cancel">
+            <div class="text">Keep</div>
+        </div>
+    </div>
+</template>
+<div class="panel">
+    <div id="rules-list" class="panel-section-list">
+        <div class="panel-list-item toggle addon-enabled">
+            <img src="/icons/check.svg" class="icon">
+            <div class="text">Live Reload is active</div>
+        </div>
+        <div class="panel-list-item toggle addon-disabled hidden">
+            <img src="/icons/cross.svg" class="icon">
+            <div class="text">Live Reload is disabled</div>
+        </div>
+        <div class="panel-section-separator"></div>
+    </div>
+
+    <div class="panel-list-item disabled" id="no-rules">
+        <div class="text">No reload rules configured</div>
+    </div>
+
+    <div class="panel-section-footer">
+        <a class="panel-section-footer-button"
+           href="/form.html"
+           target="live-reload">
+            Create a new reload rule…
+        </a>
+    </div>
+</div>
+<script type="text/javascript" src="polyfill.js"></script><script type="text/javascript" src="popup.js"></script></body>
+</html>
